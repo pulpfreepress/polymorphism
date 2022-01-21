@@ -63,14 +63,22 @@ namespace PersonEmployee {
             }
         }
 
+        // Overloaded Constructors
         // Default Constructor
         public Person() : this("John", "J", "Doe", Sex.MALE, DateTime.Now) { }
 
-        // Two-Argument Constructor
-        public Person(string firstName, string middleName, string lastName, Sex gender) : this(firstName, middleName, lastName, gender, DateTime.Now) { }
+        // Four-Argument Constructor
+        public Person(string firstName,
+                      string middleName,
+                      string lastName,
+                      Sex gender) : this(firstName, middleName, lastName, gender, DateTime.Now) { }
 
-        // Three-Argument Constructor
-        public Person(string firstName, string middleName, string lastName, Sex gender, DateTime dateOfBirth) {
+        // Five-Argument Constructor
+        public Person(string firstName,
+                      string middleName,
+                      string lastName,
+                      Sex gender,
+                      DateTime dateOfBirth) {
             FirstName = firstName;
             MiddleName = middleName;
             LastName = lastName;
@@ -80,9 +88,37 @@ namespace PersonEmployee {
 
         // Override Object.ToString()
         public override string ToString() {
-            return FirstName + " " + MiddleName + " " + LastName;
+            return FirstName + " " + MiddleName + " " + LastName + " | " + Gender +
+                   " | Born: " + DateOfBirth.ToShortDateString() + " | Age: " + Age;
         }
 
+
+        // Overload Operators <= and >=
+        public static bool operator <=(Person lhs, Person rhs) {
+            return lhs.Age <= rhs.Age;
+        }
+
+        public static bool operator >=(Person lhs, Person rhs) {
+            return lhs.Age >= rhs.Age;
+        }
+
+        // Overload Operators < and >
+        public static bool operator <(Person lhs, Person rhs) {
+            return lhs.Age < rhs.Age;
+        }
+
+        public static bool operator >(Person lhs, Person rhs) {
+            return lhs.Age > rhs.Age;
+        }
+
+        // Overload Operators == and !=
+        public static bool operator ==(Person lhs, Person rhs) {
+            return lhs.Age == rhs.Age;
+        }
+
+        public static bool operator !=(Person lhs, Person rhs) {
+            return lhs.Age != rhs.Age;
+        }
 
     } // End Person
 

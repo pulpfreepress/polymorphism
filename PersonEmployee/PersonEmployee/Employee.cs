@@ -28,5 +28,5 @@ namespace PersonEmployee {
         public abstract double Pay(); // map IPayable.Pay() to an abstract method 
                                       // and defer implementation
 
-    } // end Employee class definition
-}
+    } // End Employee
+} // End namespace

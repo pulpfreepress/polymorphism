@@ -1,5 +1,4 @@
 ﻿using System;
-
 using FleetSim.Vessels;
 using FleetSim.Weapons;
 using FleetSim.PowerPlants;
@@ -10,9 +9,9 @@ namespace FleetSim {
 
         public static void Main(string[] args) {
 
-            Vessel v1 = new Submarine(new Nuclear("Preasureized Water Mk 85"),
+            Vessel v1 = new Submarine(new Nuclear("Pressurized Water Mk 85"),
                                       new Torpedo("MK 50"),
-                                      "USS Falls Church");
+                                      "USS Norfolk (SSN-714)");
             v1.LightoffPlant();
             v1.TrainWeapon();
             v1.FireWeapon();
